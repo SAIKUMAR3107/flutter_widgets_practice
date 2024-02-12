@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:practice_app/all_products.dart';
 import 'package:practice_app/bottom_navigation.dart';
 import 'package:practice_app/counter.dart';
+import 'package:practice_app/download_progress.dart';
 import 'package:practice_app/google_bottom_navigation.dart';
 import 'package:practice_app/grid_screen.dart';
 import 'package:practice_app/loginScreen.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
                     fontSize: 30,
                     fontFamily: "Lobster"),
                 titleMedium: TextStyle(fontSize: 20, fontFamily: "Lobster"))*/),
-        home: ResponsiveScreen() /*Scaffold(
+        home: DownloadProgress() /*Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
           title: Center(child: Text("My Practice App")),
