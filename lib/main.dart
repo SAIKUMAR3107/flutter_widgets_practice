@@ -6,6 +6,8 @@ import 'package:practice_app/download_progress.dart';
 import 'package:practice_app/google_bottom_navigation.dart';
 import 'package:practice_app/grid_screen.dart';
 import 'package:practice_app/loginScreen.dart';
+import 'package:practice_app/notification_functionality.dart';
+import 'package:practice_app/notification_service.dart';
 import 'package:practice_app/passing_data_screen1.dart';
 import 'package:practice_app/plant_detail.dart';
 import 'package:practice_app/positioned.dart';
@@ -23,9 +25,25 @@ import 'package:practice_app/wrap_screen.dart';
 import 'SecondScreen.dart';
 import 'basic_calculator.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  NotificationService().initNotification();
+  runApp(MyApp());
+}
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,7 +58,7 @@ class MyApp extends StatelessWidget {
                     fontSize: 30,
                     fontFamily: "Lobster"),
                 titleMedium: TextStyle(fontSize: 20, fontFamily: "Lobster"))*/),
-        home: DownloadProgress() /*Scaffold(
+        home: NotificationServices() /*Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
           title: Center(child: Text("My Practice App")),
