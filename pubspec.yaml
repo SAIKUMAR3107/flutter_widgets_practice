@@ -36,6 +36,11 @@ dependencies:
   dio:
   path_provider:
   flutter_local_notifications: ^16.2.0
+  file_picker:
+  syncfusion_flutter_pdf:
+  pdf:
+  flutter_tts:
+  translator:
 
 
   # The following adds the Cupertino Icons font to your application.

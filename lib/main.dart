@@ -3,6 +3,7 @@ import 'package:practice_app/all_products.dart';
 import 'package:practice_app/bottom_navigation.dart';
 import 'package:practice_app/counter.dart';
 import 'package:practice_app/download_progress.dart';
+import 'package:practice_app/file_reader.dart';
 import 'package:practice_app/google_bottom_navigation.dart';
 import 'package:practice_app/grid_screen.dart';
 import 'package:practice_app/loginScreen.dart';
@@ -58,7 +59,7 @@ class _MyAppState extends State<MyApp> {
                     fontSize: 30,
                     fontFamily: "Lobster"),
                 titleMedium: TextStyle(fontSize: 20, fontFamily: "Lobster"))*/),
-        home: NotificationServices() /*Scaffold(
+        home: FileReader() /*Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
           title: Center(child: Text("My Practice App")),
