@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:practice_app/pdf_api.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 import 'package:translator/translator.dart';
 
@@ -301,8 +302,29 @@ class _FileReaderState extends State<FileReader> {
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),border:Border.all(color: Colors.orange,width: 2,strokeAlign: BorderSide.strokeAlignOutside)),
                 child: SingleChildScrollView(child: Text(teluguText,style: TextStyle(color: Colors.white,fontSize: 20),)),
               ),
-             SizedBox(height: 50,)
-
+             SizedBox(height: 20,),
+              SizedBox(
+                height: 50,
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(40))),
+                  onPressed: () async{
+                    var fileName = name+"_"+"in"+values!+".pdf";
+                    final pdfFile = await PdfApi().generateCenteredText(teluguText,fileName);
+                  },
+                  child: Text(
+                    "Click to save data in Pdf file",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "sans-serif-condensed-light"),
+                  ),
+                ),
+              ),
+              SizedBox(height: 50,)
 
              //Text(readingData,style: TextStyle(color: Colors.white,fontSize: 20),)
             ],
@@ -310,5 +332,10 @@ class _FileReaderState extends State<FileReader> {
         ),
       ),
     );
+  }
+
+  Future<void> createPDF() async {
+
+
   }
 }
